@@ -1,0 +1,52 @@
+Coursera Data Science Capstone Project
+========================================================
+author: Shun-Wen Chang
+date: 10/09/2016
+autosize: true
+
+<div class="midcenter" style="margin-right:1000px; margin-bottom:100px;">
+<img src="coursera.png"></img>
+</div>
+
+Objective
+========================================================
+
+The purpose of this capstone project is to build a Shiny App that can predict the next word. There are a few steps to complete this project:
+- Clean data and first do an exploratory data analysis
+- All text data used to create the text dictionary are from <a href="http://www.corpora.heliohost.org">HCCorpora</a>
+- Use analysis of text data and n-gram natural language processing to implement the algorithm
+- Create a shiny app that can let user type in a sentence or a paragraph and then predict the next word
+
+
+Methodology and Modeling
+========================================================
+
+After extracting a data sample from the HC Corpora database, the sample texts were cleaned by :
+- conversion to lowercase 
+- removing punctuation, links, white space, numbers and all kinds of special characters </br>
+
+Then I tokenized these text data sample into <a href="https://en.wikipedia.org/wiki/N-gram">n-grams</a> for natural language processing. For this exercise I computed 1-gram to 4-gram. I use the <a href="https://en.wikipedia.org/wiki/Katz%27s_back-off_model">back-off model</a> for calculation. I select the last 3 words user has typed and start searching for 4-gram. If not found, go with 3-gram...and so on. If nothing is found, return the most frequent one-gram as the next word.
+
+
+
+Shiny App
+========================================================
+
+The next word prediction app is hosted <a href="https://estherchang.shinyapps.io/Data_Science_captone/">HERE</a>.
+Enter your sentence and hit **Submit**  The app will show what your entered and the prediciton for next word.
+You can type in any amount of words you want. 
+
+![Screen Shot](path.png)
+
+
+Additional Information
+========================================================
+
+
+The whole code of this application, as well as all the milestone report, related scripts, this presentation etc. can be found in my GitHub repo: <a href="https://github.com/esther3587/DataScienceCapstone">https://github.com/esther3587/DataScienceCapstone</a>
+
+This R presentation is located here: <a href="https://rpubs.com/esther3587/wordpredictor">https://rpubs.com/esther3587/wordpredictor</a>
+
+Learn more about the Coursera Data Science Specialization: <a href="https://www.coursera.org/specializations/jhu-data-science">https://www.coursera.org/specializations/jhu-data-science</a>
+
+I appreciate Coursera for this specialization and the help from people in the discussion forum.
